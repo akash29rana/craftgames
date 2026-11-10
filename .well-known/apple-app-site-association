@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["AUR3A9YW3C.com.superfun.wordlotus"],
+        "components": [
+          {
+            "/": "/game",
+            "?": { "type": "wordsearch" },
+            "comment": "Open Word Search gameplay"
+          }
+        ]
+      }
+    ]
+  }
+}

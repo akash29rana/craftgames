@@ -1,0 +1,12 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.superfun.wordlotus",
+        "sha256_cert_fingerprints": [
+          "71:0E:9A:60:49:6A:3F:0E:BF:B4:73:BF:E2:96:08:40:FE:2A:02:F6:58:1C:1F:BB:8C:07:AB:2E:8D:46:E3:CC"
+        ]
+      }
+    }
+  ]
