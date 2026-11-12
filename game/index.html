@@ -107,6 +107,30 @@
       if (lede) lede.textContent = "Download Kitten Word on Google Play or the App Store. This page stays here so an installed app can open the game from a verified link.";
     })();
   </script>
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search);
+      if (q.get("type") !== "wordsearch") return;
+
+      var r = new URLSearchParams({ type: "wordsearch" });
+      ["utm_source", "utm_medium", "utm_campaign", "utm_content"].forEach(function (k) {
+        if (q.get(k)) r.set(k, q.get(k));
+      });
+      var play = "https://play.google.com/store/apps/details?id=com.superfun.wordlotus&referrer="
+               + encodeURIComponent(r.toString());
+      var appStore = "https://apps.apple.com/us/app/kitten-word-cat-word-puzzle/id6785978180";
+
+      // Buttons keep working if a browser blocks the redirect
+      document.querySelectorAll('a[href*="play.google.com/store/apps/details"]')
+        .forEach(function (a) { a.href = play; });
+
+      var ua = navigator.userAgent;
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+                  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      if (/Android/i.test(ua)) location.replace(play);
+      else if (isIOS) location.replace(appStore);
+    })();
+  </script>
   <script type="module" src="/js/main.js"></script>
 </body>
 </html>
